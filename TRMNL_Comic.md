@@ -1,5 +1,7 @@
 # How to Set Up the Daily Comic from xkcd
 
+<kbd>![daily-comic-rankings-plugin](https://github.com/SnarfulSolutionsGroup/TRMNL-Plugins/blob/main/Daily_Comic.png)</kbd>
+
 ## Step 1: Create a New Private Plugin
 Log in to your TRMNL dashboard.
 On the left-hand menu, click on the 'Go to Plugins' button.
