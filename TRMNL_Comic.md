@@ -1,6 +1,6 @@
 # How to Set Up the Daily Comic from The Far Side
 
-<kbd>![daily-comic-rankings-plugin](https://github.com/SnarfulSolutionsGroup/TRMNL-Plugins/blob/main/FarSide.png)</kbd>
+<kbd>![daily-comic-rankings-plugin](https://github.com/Yoshiofthewire/TRMNL-Plugins/blob/main/FarSide.png)</kbd>
 
 ##Step 0: [Optional] Create a private scraping server
 As aon Optional step, create your own private scraping server.
