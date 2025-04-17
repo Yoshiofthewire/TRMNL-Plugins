@@ -1,6 +1,18 @@
-# How to Set Up the Daily Comic from xkcd
+# How to Set Up the Daily Comic from The Far Side
 
 <kbd>![daily-comic-rankings-plugin](https://github.com/SnarfulSolutionsGroup/TRMNL-Plugins/blob/main/Daily_Comic.png)</kbd>
+
+##Step 0: [Optional] Create a private scraping server
+As aon Optional step, create your own private scraping server.
+
+---
+1. Install Go: Make sure you have Go installed (https://golang.org/doc/install).
+2. Download main.go and place in a perminant location
+3. Initalize the project: go mod init farside_go
+4. Install goquery: go get github.com/PuerkitoBio/goquery; go mod tidy
+5. Run the Scrapper: go run main.go
+6. Make this server publicly avablible on port 8123
+---
 
 ## Step 1: Create a New Private Plugin
 Log in to your TRMNL dashboard.
@@ -11,11 +23,12 @@ Click 'Add new' to create a new Private Plugin.
 ## Step 2: Set up the Polling Strategy
 Name your plugin (e.g., "Daily Comic") then scroll down to the Strategy section.
 Choose the Polling strategy from the Strategy dropdown menu.
-In the Polling URL field, enter this URL:
+In the Polling URL field, enter this URL (Or the Server Created in Stage 0):
 
 ```
-https://xkcd.com/info.0.json
+https://farapi.urlxl.com/
 ```
+
 Click Save. Once it is saved, the 'Edit Markup' button is now available.
 
 ## Step 3: Add the HTML Markup
@@ -27,20 +40,21 @@ Copy and paste the following code into the Markup box. This code will display a 
   <div class="layout layout--col gap--space-between">
     <div class="columns">
       <div class="column">
-        <div class="content content">
+        <div class="content content" style="max-height: 95hv">
           <!-- Centered Comic Image -->
-          <img src="{{ img }}" alt="{{ title }}" style="display: block; margin: 0 auto; max-width: 80%; height: auto; border-radius: 5px;" />
+          <img src="{{ img }}" alt="{{ title }}" style="display: block; margin: 0 auto; max-width: 80%; height: 350px;  border-radius: 5px;" />
+          <p style="text-align:center">{{ title }}"</p>
         </div>
       </div>
     </div>
   </div>
   <div class="title_bar">
     <!-- Left-Aligned Title Bar Content -->
-    <img class="image" src="https://xkcd.com/s/0b7742.png" alt="xkcd Logo" />
-    <span class="title">xkcd Comic</span>
-    <span class="instance">Daily Comic Strip</span>
+    <img class="image" src="https://siteassets.thefarside.com/packs/media/images/brand/logo/tfs_logo-cb7a52999a9300e203e36865dc428f71.svg" alt="The Far Side by Gary Larson" />
+
   </div>
 </div>
+
 
 ```
 
