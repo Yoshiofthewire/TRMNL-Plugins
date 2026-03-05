@@ -20,8 +20,17 @@ const targetURL = "https://www.thefarside.com/"
 
 // fetchComicData fetches and parses the Far Side website to extract comic info.
 func fetchComicData() (*ComicData, error) {
-	// Make HTTP GET request
-	res, err := http.Get(targetURL)
+	// Make HTTP GET request with a browser-like User-Agent to avoid 403
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", targetURL, nil)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create request: %w", err)
+	}
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
+	req.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+	req.Header.Set("Accept-Language", "en-US,en;q=0.5")
+
+	res, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch URL %s: %w", targetURL, err)
 	}
