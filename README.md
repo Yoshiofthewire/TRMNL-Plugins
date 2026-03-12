@@ -1,7 +1,7 @@
-# TRMNL-Plugins
-Plugins for the TRMNL Device
+# TRMNL-Farside
 
-Creating a landing place for TRMNL Plugins work that can be shared with the TRMNL team to use as they see fit. No restrictions on usage.
+This is a plugin for TRMNL that provides a Slide of the Day for The Far Side
+
 
 GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
